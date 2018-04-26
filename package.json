@@ -7,6 +7,8 @@
     "@fortawesome/react-fontawesome": "^0.0.18",
     "fontawesome": "^4.7.2",
     "react": "^16.3.2",
+    "react-dnd": "^2.6.0",
+    "react-dnd-html5-backend": "^2.6.0",
     "react-dom": "^16.3.2",
     "react-fontawesome": "^1.6.1",
     "react-redux": "^5.0.7",

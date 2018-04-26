@@ -13,6 +13,9 @@ const ColumnsContainer = connect(
 			addTask: (data) => {
 				dispatch(actions.addTask(data));
 			},
+			moveTask: (data) => {
+				dispatch(actions.moveTask(data));
+			},
 		};
 	}
 )(Columns);
