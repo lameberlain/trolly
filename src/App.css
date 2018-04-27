@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, #root, .App {
   height: 100%; }
 
@@ -45,67 +46,81 @@ body {
       border-bottom: 2px solid rgba(35, 34, 38, 0.7);
       color: #F5F2F6;
       text-align: center; }
-    .columns .column__body .tasks .task {
-      background-color: rgba(255, 255, 255, 0.93);
-      padding: 13px 0;
-      position: relative;
-      border-bottom: 2px solid #EAE3F6; }
-      .columns .column__body .tasks .task:hover {
-        background-color: rgba(255, 255, 255, 0.98); }
-      .columns .column__body .tasks .task:hover .task__remove, .columns .column__body .tasks .task:hover .arrow-left, .columns .column__body .tasks .task:hover .arrow-right, .columns .column__body .tasks .task:hover .task__edit {
-        visibility: unset; }
-      .columns .column__body .tasks .task__name {
-        display: inline-block;
-        padding: 0 30px;
-        cursor: pointer;
-        position: relative; }
-      .columns .column__body .tasks .task .arrow-left {
-        display: inline-block;
-        color: #57565F;
-        cursor: pointer;
-        position: absolute;
-        left: 0px;
-        visibility: hidden;
-        top: 0px;
-        font-size: 11px;
-        padding: 16px 10px; }
-        .columns .column__body .tasks .task .arrow-left:hover {
+    .columns .column__body {
+      border-radius: 0 0 5px 5px;
+      position: relative; }
+      .columns .column__body--dragging {
+        opacity: 0.7; }
+        .columns .column__body--dragging::after {
+          content: "👆";
+          padding-top: 5px;
+          left: 0;
+          right: 0;
+          position: absolute;
+          text-align: center;
+          opacity: 0.5;
+          color: #87FDB1; }
+      .columns .column__body .tasks .task {
+        background-color: rgba(255, 255, 255, 0.93);
+        padding: 13px 0;
+        position: relative;
+        border-bottom: 2px solid #EAE3F6; }
+        .columns .column__body .tasks .task:hover {
+          background-color: rgba(255, 255, 255, 0.98); }
+        .columns .column__body .tasks .task:hover .task__remove, .columns .column__body .tasks .task:hover .arrow-left, .columns .column__body .tasks .task:hover .arrow-right, .columns .column__body .tasks .task:hover .task__edit {
+          visibility: unset; }
+        .columns .column__body .tasks .task__name {
+          display: inline-block;
+          padding: 0 30px;
+          cursor: pointer;
+          position: relative; }
+        .columns .column__body .tasks .task .arrow-left {
+          display: inline-block;
           color: #57565F;
-          background-color: rgba(35, 34, 38, 0.05); }
-      .columns .column__body .tasks .task .arrow-right {
-        display: inline-block;
-        color: #57565F;
-        cursor: pointer;
-        position: absolute;
-        right: 0px;
-        visibility: hidden;
-        top: 0px;
-        font-size: 11px;
-        padding: 16px 10px; }
-        .columns .column__body .tasks .task .arrow-right:hover {
+          cursor: pointer;
+          position: absolute;
+          left: 0px;
+          visibility: hidden;
+          top: 0px;
+          font-size: 11px;
+          padding: 16px 10px; }
+          .columns .column__body .tasks .task .arrow-left:hover {
+            color: #57565F;
+            background-color: rgba(35, 34, 38, 0.05); }
+        .columns .column__body .tasks .task .arrow-right {
+          display: inline-block;
           color: #57565F;
-          background-color: rgba(35, 34, 38, 0.05); }
-      .columns .column__body .tasks .task__remove {
-        position: absolute;
-        font-size: 11px;
-        padding: 16px 10px;
-        color: red;
-        right: 25px;
-        top: 0px;
-        cursor: pointer;
-        visibility: hidden; }
-        .columns .column__body .tasks .task__remove:hover {
-          background-color: rgba(35, 34, 38, 0.05); }
-      .columns .column__body .tasks .task__edit {
-        position: absolute;
-        font-size: 11px;
-        padding: 16px 10px;
-        color: #7C7A89;
-        right: 55px;
-        top: 0px;
-        cursor: pointer;
-        visibility: hidden; }
-        .columns .column__body .tasks .task__edit:hover {
-          background-color: rgba(35, 34, 38, 0.05); }
+          cursor: pointer;
+          position: absolute;
+          right: 0px;
+          visibility: hidden;
+          top: 0px;
+          font-size: 11px;
+          padding: 16px 10px; }
+          .columns .column__body .tasks .task .arrow-right:hover {
+            color: #57565F;
+            background-color: rgba(35, 34, 38, 0.05); }
+        .columns .column__body .tasks .task__remove {
+          position: absolute;
+          font-size: 11px;
+          padding: 16px 10px;
+          color: red;
+          right: 25px;
+          top: 0px;
+          cursor: pointer;
+          visibility: hidden; }
+          .columns .column__body .tasks .task__remove:hover {
+            background-color: rgba(35, 34, 38, 0.05); }
+        .columns .column__body .tasks .task__edit {
+          position: absolute;
+          font-size: 11px;
+          padding: 16px 10px;
+          color: #7C7A89;
+          right: 55px;
+          top: 0px;
+          cursor: pointer;
+          visibility: hidden; }
+          .columns .column__body .tasks .task__edit:hover {
+            background-color: rgba(35, 34, 38, 0.05); }
 
 /*# sourceMappingURL=App.css.map */

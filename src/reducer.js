@@ -3,13 +3,19 @@ function reducer(state = {}, action) {
 	switch (action.type) {
 		case 'MOVE_TASK': {
 			let col;
-			if (action.data.direction === 'left') {
-				col = action.data.column - 1;
+			console.log('action.data', action.data);
+			console.log('newState', newState);
+			if (typeof action.data.toColumn !== 'undefined') {
+				col = action.data.toColumn;
 			} else {
-				col = action.data.column + 1;
+				col = (action.data.direction === 'left') ? action.data.column - 1 : action.data.column + 1;
 			}
-			newState.columns[col].tasks.push(state.columns[action.data.column].tasks[action.data.index]);
-			newState.columns[action.data.column].tasks.splice(action.data.index, 1);
+			console.log('col', col);
+			console.log('newState.columns[col]', newState.columns[col]);
+			if (col !== action.data.column) {
+				newState.columns[col].tasks.push(state.columns[action.data.column].tasks[action.data.index]);
+				newState.columns[action.data.column].tasks.splice(action.data.index, 1);
+			}
 			return newState;
 		}
 		case 'RENAME_TASK': {

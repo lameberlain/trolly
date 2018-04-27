@@ -4,20 +4,18 @@ import { DragSource } from 'react-dnd';
 import ItemTypes from '../constants/ItemTypes.js';
 
 const taskSource = {
-	beginDrag() {
+	beginDrag(props) {
 		console.log('begin');
-		return {};
+
+		return { index: props.index, column: props.column, };
 	},
 	endDrag(props, monitor) {
-		console.log(props);
-		console.log('monitor.getDropResult', monitor.getDropResult);
-		props.moveTask({ direction: 'left', index: 1, column: props.column, });
+		console.log('end drag props', props);
 		return {};
 	}
 };
 
 function collect(connect, monitor) {
-	// console.log('monitor.didDrop()', monitor.didDrop());
 	return {
 		connectDragSource: connect.dragSource(),
 		isDragging: monitor.isDragging(),
