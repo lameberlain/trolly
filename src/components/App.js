@@ -9,7 +9,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<header className="header">
-					<span className="header__title"><i className="fa fa-train"></i> Trolly</span>
+					<span className="header__title"><i className="fa fa-train"></i> Lameberlain.com</span>
 				</header>
 				<ColumnsContainer />
 			</div>
