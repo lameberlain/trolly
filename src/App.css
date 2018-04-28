@@ -123,4 +123,9 @@ body {
           .columns .column__body .tasks .task__edit:hover {
             background-color: rgba(35, 34, 38, 0.05); }
 
+.footer {
+  font-size: 10px;
+  color: white;
+  text-align: center; }
+
 /*# sourceMappingURL=App.css.map */

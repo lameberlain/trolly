@@ -12,6 +12,7 @@ class App extends Component {
 					<span className="header__title"><i className="fa fa-train"></i> Lameberlain.com</span>
 				</header>
 				<ColumnsContainer />
+				<span className="footer">eventually, this site is going to have something of value on it. for now, enjoy dragging and dropping stuff. :) </span>
 			</div>
 		);
 	}
