@@ -3,6 +3,7 @@ function reducer(state = {}, action) {
 	switch (action.type) {
 		case 'MOVE_TASK': {
 			let col;
+			let item = state.columns[action.data.column].tasks[action.data.index];
 			console.log('action.data', action.data);
 			console.log('newState', newState);
 			if (typeof action.data.toColumn !== 'undefined') {
@@ -10,10 +11,11 @@ function reducer(state = {}, action) {
 			} else {
 				col = (action.data.direction === 'left') ? action.data.column - 1 : action.data.column + 1;
 			}
-			console.log('col', col);
-			console.log('newState.columns[col]', newState.columns[col]);
-			if (col !== action.data.column) {
-				newState.columns[col].tasks.push(state.columns[action.data.column].tasks[action.data.index]);
+			if (typeof action.data.toIndex !== 'undefined') {
+				newState.columns[action.data.column].tasks.splice(action.data.index, 1);
+				newState.columns[col].tasks.splice(action.data.toIndex, 0, item);
+			} else {
+				newState.columns[col].tasks.push(item);
 				newState.columns[action.data.column].tasks.splice(action.data.index, 1);
 			}
 			return newState;

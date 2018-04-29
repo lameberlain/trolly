@@ -6,13 +6,11 @@ import ItemTypes from '../constants/ItemTypes.js';
 
 const columnTarget = {
 	drop(props, monitor) {
-		console.log('drop');
-		console.log('drop props', props);
-		console.log('monitor.getDropResult()', monitor.getDropResult());
 		let item = monitor.getItem();
-		console.log('item.index', item.index);
-		props.moveTask({ toColumn: parseInt(props.index), index: item.index, column: item.column });
-		// return {result: 'drop'};
+		if (!monitor.getDropResult()) {
+			props.moveTask({ toColumn: parseInt(props.index), index: item.index, column: item.column });
+		}
+		return { props };
 	},
 };
 
